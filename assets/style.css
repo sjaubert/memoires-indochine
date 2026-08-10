@@ -151,12 +151,17 @@ img{max-width:100%; height:auto}
 .large{max-width:84rem; margin:0 auto; padding:3.5rem 1.5rem 2rem}
 
 .texte figure.carte, .carte-bloc{margin:2.6rem 0}
-.texte figure.carte img, .carte-bloc img{
-  box-shadow:none; border:1px solid var(--filet); background:#fff;
-  width:100%; cursor:zoom-in;
-}
+/* La largeur est pilotee par .carte-cadre et non par .texte figure.carte,
+   sinon la seconde regle, plus specifique, empeche le passage en taille
+   reelle. Ne pas remettre width sur un selecteur plus long. */
 .carte-cadre{overflow:auto; -webkit-overflow-scrolling:touch}
-.carte-cadre.zoom{cursor:grab}
+.carte-cadre img{
+  display:block; width:100%; height:auto; cursor:zoom-in;
+  border:1px solid var(--filet); background:#fff;
+  box-shadow:none; border-radius:0;
+}
+.texte figure.carte img{box-shadow:none; border-radius:0}
+.carte-cadre.zoom{cursor:grab; max-height:80vh}
 .carte-cadre.zoom img{width:auto; max-width:none; cursor:zoom-out}
 .carte-outils{
   display:flex; gap:1rem; justify-content:center; align-items:center;
