@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sjaubert.github.io/memoires-indochine/sitemap.xml
