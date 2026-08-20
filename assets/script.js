@@ -44,3 +44,15 @@
     if(e.key==='ArrowRight'&&s) location.href=s;
   });
 })();
+/* Lien de contact : l'adresse est assemblee au chargement pour qu'elle
+   n'apparaisse pas en clair dans le code source des pages. */
+(function(){
+  var cible=document.getElementById('contact'); if(!cible) return;
+  var nom='stephane.jaubert', domaine='gmail.com';
+  var objet=encodeURIComponent('Mémoires du Colonel Jacques JAUBERT');
+  var lien=document.createElement('a');
+  lien.href='mailto:'+nom+'@'+domaine+'?subject='+objet;
+  lien.textContent='Contact';
+  cible.appendChild(document.createTextNode(' · '));
+  cible.appendChild(lien);
+})();
